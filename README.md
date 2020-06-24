@@ -1,3 +1,3 @@
 # mandala.svg
 
-[mandala](./mandala.svg)
+![mandala](mandala.svg)
