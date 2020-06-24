@@ -2,41 +2,51 @@
   <!-- 1 2 3 5 8 13 21 34 55 89 144 233 377 610 976 -->
   <style>
     svg {
-      background-color: black;
+      /* background-color: black; */
     }
     .ring {
       stroke: white;
-      background: transparent;
+      fill: hsla(270, 100%, 50%, 0.1);
     }
     #ring-976 {
       stroke: hsl(359.9976, 100%, 50%);
+      fill: hsla(359.9976, 100%, 50%, 0.1);
     }
     #ring-610 {
       stroke: hsl(224.9985, 100%, 50%);
+      fill: hsla(224.9985, 100%, 50%, 0.1);
     }
     #ring-377 {
       stroke: hsl(139.05645, 100%, 50%);
+      fill: hsla(139.05645, 100%, 50%, 0.1);
     }
     #ring-233 {
       stroke: hsl(85.94205, 100%, 50%);
+      fill: hsla(85.94205, 100%, 50%, 0.1);
     }
     #ring-144 {
       stroke: hsl(53.1144, 100%, 50%);
+      fill: hsla(53.1144, 100%, 50%, 0.1);
     }
     #ring-89 {
       stroke: hsl(32.82765, 100%, 50%);
+      fill: hsla(32.82765, 100%, 50%, 0.1);
     }
     #ring-55 {
       stroke: hsl(20.28675, 100%, 50%);
+      fill: hsla(20.28675, 100%, 50%, 0.1);
     }
     #ring-34 {
       stroke: hsl(12.5409, 100%, 50%);
+      fill: hsla(12.5409, 100%, 50%, 0.1);
     }
     #ring-21 {
       stroke: hsl(7.74585, 100%, 50%);
+      fill: hsla(7.74585, 100%, 50%, 0.1);
     }
     #ring-13 {
       stroke: hsl(4.79505, 100%, 50%);
+      fill: hsla(4.79505, 100%, 50%, 0.1);
     }
     #ring-8 {
       stroke: hsl(2.9508, 100%, 50%);
