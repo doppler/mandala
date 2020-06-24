@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="976" height="976">
+  <!-- 1 2 3 5 8 13 21 34 55 89 144 233 377 610 976 -->
+  <style>
+    svg {
+      background-color: black;
+    }
+    .ring {
+      stroke: white;
+      background: transparent;
+    }
+    #ring-976 {
+      stroke: hsl(359.9976, 100%, 50%);
+    }
+    #ring-610 {
+      stroke: hsl(224.9985, 100%, 50%);
+    }
+    #ring-377 {
+      stroke: hsl(139.05645, 100%, 50%);
+    }
+    #ring-233 {
+      stroke: hsl(85.94205, 100%, 50%);
+    }
+    #ring-144 {
+      stroke: hsl(53.1144, 100%, 50%);
+    }
+    #ring-89 {
+      stroke: hsl(32.82765, 100%, 50%);
+    }
+    #ring-55 {
+      stroke: hsl(20.28675, 100%, 50%);
+    }
+    #ring-34 {
+      stroke: hsl(12.5409, 100%, 50%);
+    }
+    #ring-21 {
+      stroke: hsl(7.74585, 100%, 50%);
+    }
+    #ring-13 {
+      stroke: hsl(4.79505, 100%, 50%);
+    }
+    #ring-8 {
+      stroke: hsl(2.9508, 100%, 50%);
+    }
+    #ring-4 {
+      stroke: hsl(1.4754, 100%, 50%);
+    }
+    </style>
+    <circle class='ring' id='ring-976' cx='488' cy='488' r='488' />
+    <circle class='ring' id='ring-610' cx='488' cy='488' r='305' />
+    <circle class='ring' id='ring-377' cx='488' cy='488' r='188.5' />
+    <circle class='ring' id='ring-233' cx='488' cy='488' r='116.5' />
+    <circle class='ring' id='ring-144' cx='488' cy='488' r='72' />
+    <circle class='ring' id='ring-89' cx='488' cy='488' r='44.5' />
+    <circle class='ring' id='ring-55' cx='488' cy='488' r='27.5' />
+    <circle class='ring' id='ring-34' cx='488' cy='488' r='17' />
+    <circle class='ring' id='ring-21' cx='488' cy='488' r='10.5' />
+    <circle class='ring' id='ring-13' cx='488' cy='488' r='6.5' />
+    <circle class='ring' id='ring-8' cx='488' cy='488' r='4' />
+    <circle class='ring' id='ring-4' cx='488' cy='488' r='2' />
+
+
+</svg>
