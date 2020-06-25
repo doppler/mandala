@@ -9,24 +9,53 @@ const fibonacciSequence = (n) => {
   return arr;
 };
 
-const seq = fibonacciSequence(12).reverse();
+const seq = fibonacciSequence(12).slice(3).reverse();
 const center = seq[0] / 2;
+const radius1 = center;
 const baseHue = 270;
 
-const App = () => {
+const coordsFromAngleAndRadius = (angle, radius) => {
+  return {
+    x: center + (radius * Math.cos(angle * Math.PI / 180)),
+    y: center + (radius * Math.sin(angle * Math.PI / 180)),
+  }
+}
+
+const Mandala = () => {
   return (
-    <svg xmlns='http://www.w3.org/2000/svg' width={seq[0]} height={seq[0]}>
-      {seq.map((n, i) => (
-        <circle
-          cx={center}
-          cy={center}
-          r={n / 2}
-          stroke={`hsl(${(360 / seq[0]) * n + baseHue}, 100%, 50%)`}
-          fill={`hsla(${(360 / seq[0]) * n + baseHue}, 100%, 50%, 0.075)`}
-        />
-      ))}
-    </svg>
+    <>
+      <svg xmlns='http://www.w3.org/2000/svg' width={seq[0]} height={seq[0]}>
+        <BaseCircles />
+        <OuterPetals />
+      </svg>
+    </>
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const BaseCircles = () => seq.map((n, i) => (
+  <circle key={n}
+    cx={center}
+    cy={center}
+    r={n / 2}
+    stroke={`hsl(${(360 / seq[0]) * n + baseHue}, 100%, 50%)`}
+    fill={`hsla(${(360 / seq[0]) * n + baseHue}, 100%, 50%, 0.075)`}
+  />
+))
+
+const OuterPetals = () => {
+  const coordsArr = []
+  for (let angle = -90; angle <= (360 - 90); angle += 18) {
+    const { x, y } = coordsFromAngleAndRadius(angle, angle % 36 === 0 ? seq[1] / 2 : seq[0] / 2);
+    coordsArr.push({ x, y })
+  }
+  const pathArr = [`M ${coordsArr[0].x} ${coordsArr[0].y}`]
+  coordsArr.splice(1).forEach(({ x, y }) => {
+    pathArr.push(`L ${x} ${y}`)
+  })
+  return (
+    <g>
+      <path d={pathArr.join(' ')} stroke={`hsl(${baseHue}, 100%, 50%)`} fill='none' />
+    </g>
+  )
+}
+ReactDOM.render(<Mandala />, document.getElementById('root'));
