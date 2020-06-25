@@ -45,8 +45,7 @@ const BaseCircles = () => seq.map((n, i) => (
 const OuterPetals = () => {
   const coordsArr = []
   for (let angle = -90; angle <= (360 - 90); angle += 18) {
-    const { x, y } = coordsFromAngleAndRadius(angle, angle % 36 === 0 ? seq[1] / 2 : seq[0] / 2);
-    coordsArr.push({ x, y })
+    coordsArr.push(coordsFromAngleAndRadius(angle, angle % 36 === 0 ? seq[1] / 2 : seq[0] / 2))
   }
   const pathArr = [`M ${coordsArr[0].x} ${coordsArr[0].y}`]
   coordsArr.splice(1).forEach(({ x, y }) => {
