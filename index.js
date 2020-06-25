@@ -8,9 +8,12 @@ const fibonacciSequence = (n) => {
   }
   return arr;
 };
+
+const seq = fibonacciSequence(12).reverse();
+const center = seq[0] / 2;
+const baseHue = 270;
+
 const App = () => {
-  const seq = fibonacciSequence(13).reverse();
-  const center = seq[0] / 2;
   return (
     <svg xmlns='http://www.w3.org/2000/svg' width={seq[0]} height={seq[0]}>
       {seq.map((n, i) => (
@@ -18,8 +21,8 @@ const App = () => {
           cx={center}
           cy={center}
           r={n / 2}
-          stroke={`hsl(${(360 / seq[0]) * n}, 100%, 50%)`}
-          fill={`hsla(${(360 / seq[0]) * n}, 100%, 50%, 0.1)`}
+          stroke={`hsl(${(360 / seq[0]) * n + baseHue}, 100%, 50%)`}
+          fill={`hsla(${(360 / seq[0]) * n + baseHue}, 100%, 50%, 0.075)`}
         />
       ))}
     </svg>
