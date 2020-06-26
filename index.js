@@ -43,18 +43,22 @@ const BaseCircles = () => seq.map((n, i) => (
 ))
 
 const OuterPetals = () => {
-  const coordsArr = []
+  const ca = []
   for (let angle = -90; angle <= (360 - 90); angle += 18) {
-    coordsArr.push(coordsFromAngleAndRadius(angle, angle % 36 === 0 ? seq[1] / 2 : seq[0] / 2))
+    ca.push(coordsFromAngleAndRadius(angle, angle % 36 === 0 ? seq[1] / 2 : seq[0] / 2))
   }
-  const pathArr = [`M ${coordsArr[0].x} ${coordsArr[0].y}`]
-  coordsArr.splice(1).forEach(({ x, y }) => {
-    pathArr.push(`L ${x} ${y}`)
-  })
+  console.log(ca)
+  const pathArr = [];
+  for (let i = 1; i < ca.length; i++) {
+    pathArr.push(`L ${ca[i].x} ${ca[i].y}`)
+  }
   return (
     <g>
-      <path d={pathArr.join(' ')} stroke={`hsl(${baseHue}, 100%, 50%)`} fill='none' />
+      <path d={`M ${ca[0].x} ${ca[0].y}` + pathArr.join(' ') + ' '} stroke={`hsl(${baseHue}, 100%, 50%)`} fill='none' />
+      <path d={`M ${ca[0].x} ${ca[0].y} L ${ca[8].x} ${ca[8].y} L ${ca[16].x} ${ca[16].y} L ${ca[4].x} ${ca[4].y} L ${ca[12].x} ${ca[12].y} Z`} stroke='hsl(407.5081967213115, 100%, 50%)' fill='hsla(270, 100%, 50%, 0.25)' />
     </g>
   )
 }
 ReactDOM.render(<Mandala />, document.getElementById('root'));
+
+<circle cx="305" cy="305" r="116.5" stroke="hsl(407.5081967213115, 100%, 50%)" fill="hsla(407.5081967213115, 100%, 50%, 0.075)"></circle>
